@@ -1,0 +1,115 @@
+body {
+  background-color: black;
+  color: #00ccff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-shadow:
+    0 0 1.2px #00ccff,
+    0 0 3.5px #00ccff; /* Neónový efekt pre všetky texty */
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #00ccff;
+  height: 70px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow:
+    0 0 1.5px #00ccff,
+    0 0 4px #00ccff,
+    0 0 6px #00ccff;
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(4px);
+}
+
+header h1 {
+  font-size: 32px;
+  margin: 0;
+}
+
+nav {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px 0;
+  border-bottom: 1px solid #00ccff;
+  display: flex;
+  justify-content: center;
+}
+
+nav a {
+  color: #00ccff;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 1rem;
+  text-shadow: 0 0 1.5px #00ccff, 0 0 3px #00ccff;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px;
+}
+
+.gallery a.item {
+  display: block;
+  width: 260px;
+  height: 360px;
+  position: relative;
+  border: 1px solid #00ccff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 4px #00ccff;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery a.item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 6px #00ccff;
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #00ccff;
+  font-size: 15px;
+  text-shadow: 0 0 1.2px #00ccff, 0 0 3px #00ccff;
+}
+
+.info .caption {
+  font-weight: bold;
+}
+
+.info .price {
+  font-size: 14px;
+  margin-right: 6px;
+}
+
+.info .price.zdarma {
+  margin-right: 16px;
+  font-size: 13px;
+}
