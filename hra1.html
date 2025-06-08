@@ -1,0 +1,332 @@
+
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <title>Cyberpunk</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #000;
+      color: #0ff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #111;
+      color: #0ff;
+      text-shadow: 0 0 10px #0ff;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .header-title {
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .header-categories {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      font-size: 18px;
+    }
+
+    .header-categories a {
+      color: #0ff;
+      text-decoration: none;
+      border-bottom: 1px dotted #0ff;
+    }
+
+    .header-categories a:hover {
+      text-shadow: 0 0 5px #0ff;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      padding: 40px;
+      align-items: stretch;
+    }
+
+    .left {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .left img {
+      width: 80%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 16px;
+      background-color: transparent;
+      box-shadow: 0 0 20px 5px rgba(0, 255, 255, 0.7);
+    }
+
+    .right {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .right h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .right p {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+
+    .right .genre a {
+      color: #0ff;
+      text-decoration: none;
+      border-bottom: 1px dotted #0ff;
+    }
+
+    .right .genre a:hover {
+      text-shadow: 0 0 5px #0ff;
+    }
+
+    .buy-button {
+      background-color: #0ff;
+      color: #000;
+      padding: 12px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+      box-shadow: 0 0 10px #0ff;
+    }
+
+    /* Galéria */
+    .gallery-wrapper {
+      width: 100%;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      position: relative;
+    }
+
+    .gallery-container {
+      width: 100%;
+      max-width: 800px;
+      height: 400px;
+      overflow: hidden;
+      border-radius: 16px;
+      background-color: #111;
+      position: relative;
+    }
+
+    .gallery-slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .gallery-slide img, .gallery-slide video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+
+    .arrow {
+      font-size: 40px;
+      cursor: pointer;
+      color: #0ff;
+      padding: 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+      box-shadow: 0 0 10px #0ff;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      display: inline-block;
+    }
+
+    .arrow:hover {
+      background-color: rgba(0, 255, 255, 0.2);
+    }
+
+    .left-arrow {
+      left: -20px;
+    }
+
+    .right-arrow {
+      right: -20px;
+    }
+
+    /* Bodky (indikátory) */
+    .dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      gap: 10px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      background-color: #0ff;
+      border-radius: 50%;
+      opacity: 0.5;
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+
+    .dot.active {
+      opacity: 1;
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-title">Cyberpunk 2077</div>
+  <div class="header-categories">
+    <a href="domov.html">Domov</a>
+    <a href="kat1.html">Videohry</a>
+    
+  </div>
+</header>
+
+<div class="container">
+  <div class="left">
+    <img src="cyberpunk.jpg" alt="Cyberpunk">
+  </div>
+  <div class="right">
+    <h1>Cyberpunk 2077</h1>
+    <p>Futuristická RPG hra v otvorenom svete s prvkami akcie a sci-fi.</p>
+    <p><strong>Cena:</strong> 39.99 €</p>
+    <p class="genre">
+      Genre: 
+      <a href="https://sk.wikipedia.org/wiki/Sci-fi" target="_blank">Sci-fi</a>, 
+      <a href="https://sk.wikipedia.org/wiki/Hra_na_hrdinov" target="_blank">RPG</a>, 
+      <a href="https://sk.wikipedia.org/wiki/Singleplayer" target="_blank">Singleplayer</a>
+    </p>
+    <a href="kupit.html"><button class="buy-button">Kúpiť</button></a>
+
+    <!-- Galéria -->
+    <div class="gallery-wrapper">
+      <div class="gallery-container">
+        <div class="gallery-slide img1">
+          <video id="video1" autoplay controls muted>
+            <source src="yt1z.net - Cyberpunk 2077 — Official E3 2018 Trailer (2160p).mp4" type="video/mp4">
+            Váš prehliadač nepodporuje prehrávanie videí.
+          </video>
+        </div>
+        <div class="gallery-slide img2">
+          <img src="https://www.teknogundemi.com/wp-content/uploads/2020/11/cyberpunk-2077-oyun.jpg" alt="Screenshot 2">
+        </div>
+        <div class="gallery-slide img3">
+          <img src="https://publicdomain.paris/assets/uploads/2020/12/Cyberpunk2077_Provoked_RGB.jpg" alt="Screenshot 3">
+        </div>
+        <div class="gallery-slide img4">
+          <img src="https://amd.news/wp-content/uploads/2022/02/Cp2077-1-230222.jpg" alt="Screenshot 4">
+        </div>
+        <div class="gallery-slide img5">
+           <img src="https://exputer.com/wp-content/uploads/2023/06/Cyberpunk-2077.jpg" alt="Screenshot 1">
+        </div>
+      </div>
+
+      <!-- Šípky na prechod -->
+      <label class="arrow left-arrow" onclick="changeSlide(-1)">&#10094;</label>
+      <label class="arrow right-arrow" onclick="changeSlide(1)">&#10095;</label>
+
+      <!-- Bodky -->
+      <div class="dots">
+        <div class="dot" onclick="goToSlide(1)"></div>
+        <div class="dot" onclick="goToSlide(2)"></div>
+        <div class="dot" onclick="goToSlide(3)"></div>
+        <div class="dot" onclick="goToSlide(4)"></div>
+        <div class="dot" onclick="goToSlide(5)"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  let currentSlide = 1;
+  const totalSlides = 5;
+
+  function changeSlide(direction) {
+    const currentVideo = document.querySelector(`#video${currentSlide}`);
+    if (currentVideo) {
+      currentVideo.pause();
+      currentVideo.currentTime = 0;
+    }
+
+    currentSlide += direction;
+    if (currentSlide > totalSlides) currentSlide = 1;
+    if (currentSlide < 1) currentSlide = totalSlides;
+    
+    showSlide(currentSlide);
+  }
+
+  function goToSlide(slideNumber) {
+    const currentVideo = document.querySelector(`#video${currentSlide}`);
+    if (currentVideo) {
+      currentVideo.pause();
+      currentVideo.currentTime = 0;
+    }
+
+    currentSlide = slideNumber;
+    showSlide(currentSlide);
+  }
+
+  function showSlide(slideNumber) {
+    const slides = document.querySelectorAll('.gallery-slide');
+    slides.forEach((slide, index) => {
+      slide.style.display = (index + 1 === slideNumber) ? 'block' : 'none';
+    });
+
+    const dots = document.querySelectorAll('.dot');
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index + 1 === slideNumber);
+    });
+
+    const nextVideo = document.querySelector(`#video${slideNumber}`);
+    if (nextVideo) {
+      nextVideo.play();
+    }
+  }
+
+  window.onload = function() {
+    showSlide(currentSlide);
+    const firstVideo = document.querySelector('#video1');
+    if (firstVideo) {
+      firstVideo.play();
+    }
+  };
+</script>
+
+</body>
+</html>
+
+
+
+
+

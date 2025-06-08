@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <title>Kategória – Videohry</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* VIDEO POZADIE + OVERLAY */
+    video.video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(to bottom right, rgba(0, 0, 50, 0.6), rgba(20, 0, 40, 0.6));
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #fff;
+    }
+
+    header h1 {
+      text-align: center;
+      padding: 30px 0;
+      color: #00aaff;
+      text-shadow: 0 0 10px #00aaff;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 15px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: #00ccff;
+      text-decoration: none;
+      text-shadow: 0 0 8px #00ccff;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 12px #ffffff;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+      padding: 30px;
+    }
+
+    .item {
+      text-decoration: none;
+      color: inherit;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      height: 300px;
+    }
+
+    .item:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 15px #00ccff;
+    }
+
+    .item img {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0;
+    }
+
+    .info {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .info .caption {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #00ccff;
+      text-shadow: 0 0 10px #00ccff, 0 0 20px #00ccff;
+      margin-bottom: 4px;
+      text-align: left;
+    }
+
+    .info .price {
+      font-size: 1rem;
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+      text-align: left;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Video pozadie -->
+  <video autoplay muted loop playsinline class="video-bg">
+    <source src="lol.mp4" type="video/mp4">
+    Tvoj prehliadač nepodporuje video tag.
+  </video>
+
+  <header>
+    <h1>Videohry</h1>
+  </header>
+
+  <nav>
+    <a href="domov.html">Domov</a>
+    <a href="kat1.html">Videohry</a>
+   
+  </nav>
+
+  <div class="gallery">
+    <a href="hra1.html" class="item">
+      <img src="cyberpunk.jpg" alt="Cyberpunk 2077">
+      <div class="info">
+        <div class="caption">Cyberpunk 2077</div>
+        <div class="price">39,99 €</div>
+      </div>
+    </a>
+
+    <a href="hra2.html" class="item">
+      <img src="https://gamerjournalist.com/wp-content/uploads/2023/03/Elden-Ring.jpg" alt="Elden Ring">
+      <div class="info">
+        <div class="caption">Elden Ring</div>
+        <div class="price">49,99 €</div>
+      </div>
+    </a>
+
+    <a href="hra3.html" class="item">
+      <img src="https://1.bp.blogspot.com/-3sOfIkcMDrE/Up85o6VRd1I/AAAAAAAAAB0/cMRb1trPZzw/s1600/gta5+img.jpg" alt="GTA V">
+      <div class="info">
+        <div class="caption">GTA V</div>
+        <div class="price">19,99 €</div>
+      </div>
+    </a>
+
+    <a href="hra4.html" class="item">
+      <img src="https://www.numerama.com/wp-content/uploads/2017/07/minecraft_horizontal-key-art.jpg" alt="Minecraft">
+      <div class="info">
+        <div class="caption">Minecraft</div>
+        <div class="price">23,99 €</div>
+      </div>
+    </a>
+
+    <a href="hra5.html" class="item">
+      <img src="https://cdn2.unrealengine.com/ecosystem-w-fn-1920x1080-ac7f3aa4b57b.jpg" alt="Fortnite">
+      <div class="info">
+        <div class="caption">Fortnite</div>
+        <div class="price">Zdarma</div>
+      </div>
+    </a>
+
+    <a href="hra6.html" class="item">
+      <img src="https://image.api.playstation.com/cdn/UP0700/CUSA03388_00/v8JlD8KcQUtTqaLBmpFnj1ESRR5zMkLk.png" alt="Dark Souls 3">
+      <div class="info">
+        <div class="caption">Dark Souls 3</div>
+        <div class="price">59,99 €</div>
+      </div>
+    </a>
+
+    <a href="hra7.html" class="item">
+      <img src="https://static.tvtropes.org/pmwiki/pub/images/league_of_legends_key_art.jpg" alt="League of Legends">
+      <div class="info">
+        <div class="caption">League of Legends</div>
+        <div class="price">Zdarma</div>
+      </div>
+    </a>
+
+    <a href="hra8.html" class="item">
+      <img src="https://www.true-gaming.net/home/wp-content/uploads/2020/10/valorant-personajes-1.jpg" alt="Valorant">
+      <div class="info">
+        <div class="caption">Valorant</div>
+        <div class="price">Zdarma</div>
+      </div>
+    </a>
+
+    <a href="hra9.html" class="item">
+      <img src="https://discogs.vmusic.ir/wp-content/uploads/2024/01/Robbie-Wyckoff-TEKKEN-8-Original-Soundtrack-2024.jpg" alt="Tekken 8">
+      <div class="info">
+        <div class="caption">Tekken 8</div>
+        <div class="price">44,99 €</div>
+      </div>
+    </a>
+
+    <a href="hra10.html" class="item">
+      <img src="https://cs10.pikabu.ru/post_img/big/2019/03/22/11/155327891619188128.jpg" alt="Sekiro">
+      <div class="info">
+        <div class="caption">Sekiro</div>
+        <div class="price">59,99 €</div>
+      </div>
+    </a>
+
+    <a href="hra11.html" class="item">
+      <img src="https://cdn.mobygames.com/covers/17149812-street-fighter-6-xbox-series-front-cover.jpg" alt="Street Fighter 6">
+      <div class="info">
+        <div class="caption">Street Fighter 6</div>
+        <div class="price">54,99 €</div>
+      </div>
+    </a>
+
+    <a href="hra12.html" class="item">
+      <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/09/counter-strike-2.jpg" alt="Counter-Strike 2">
+      <div class="info">
+        <div class="caption">Counter-Strike 2</div>
+        <div class="price">Zdarma</div>
+      </div>
+    </a>
+  </div>
+
+</body>
+</html>

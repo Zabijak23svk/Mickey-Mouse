@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <title>Street Fighter 6</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #00ffff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #111;
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .header-title {
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .header-categories {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      font-size: 18px;
+    }
+
+    .header-categories a {
+      color: #00ffff;
+      text-decoration: none;
+      border-bottom: 1px dotted #00ffff;
+    }
+
+    .header-categories a:hover {
+      text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      padding: 40px;
+      align-items: stretch;
+    }
+
+    .left {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .left img {
+      width: 80%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 16px;
+      background-color: transparent;
+      box-shadow: 0 0 20px 5px rgba(0, 255, 255, 0.7);
+    }
+
+    .right {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .right h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+      color: #00ffff;
+      text-shadow:
+        0 0 5px #00ffff,
+        0 0 10px #00ffff,
+        0 0 20px #00ffff,
+        0 0 40px #00ffff;
+    }
+
+    .right p {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+
+    .right .genre a {
+      color: #00ffff;
+      text-decoration: none;
+      border-bottom: 1px dotted #00ffff;
+    }
+
+    .right .genre a:hover {
+      text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+    }
+
+    .buy-button {
+      background-color: #000;
+      color: #00ffff;
+      padding: 12px 24px;
+      font-size: 18px;
+      border: 2px solid #00ffff;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+      box-shadow: 0 0 10px #00ffff;
+      animation: neonPulse 1.5s infinite alternate;
+      text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff; /* Neon text effect */
+    }
+
+    @keyframes neonPulse {
+      from {
+        box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+      }
+      to {
+        box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
+      }
+    }
+
+    .gallery-wrapper {
+      width: 100%;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      position: relative;
+    }
+
+    .gallery-container {
+      width: 100%;
+      max-width: 800px;
+      height: 400px;
+      overflow: hidden;
+      border-radius: 16px;
+      background-color: #111;
+      position: relative;
+    }
+
+    .gallery-slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .gallery-slide img,
+    .gallery-slide video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 0 20px 5px #00ffff;
+    }
+
+    .arrow {
+      font-size: 40px;
+      cursor: pointer;
+      color: #00ffff;
+      padding: 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+      box-shadow: 0 0 10px #00ffff;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      display: inline-block;
+    }
+
+    .arrow:hover {
+      background-color: rgba(0, 255, 255, 0.2);
+    }
+
+    .left-arrow {
+      left: -20px;
+    }
+
+    .right-arrow {
+      right: -20px;
+    }
+
+    .dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      gap: 10px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      background-color: #00ffff;
+      border-radius: 50%;
+      opacity: 0.5;
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+
+    .dot.active {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-title">Street Fighter 6</div>
+  <div class="header-categories">
+    <a href="domov.html">Domov</a>
+    <a href="kat1.html">Videohry</a>
+    
+  </div>
+</header>
+
+<div class="container">
+  <div class="left">
+    <img src="https://cdn.mobygames.com/covers/17149812-street-fighter-6-xbox-series-front-cover.jpg" alt="Street Fighter 6">
+  </div>
+  <div class="right">
+    <h1>Street Fighter 6</h1>
+    <p>Legendárna bojová séria sa vracia s novým vizuálom, dynamickými súbojmi a rozšírenými režimami hrania. Staňte sa majstrom v aréne a zdolajte súperov po celom svete!</p>
+    <p><strong>Cena:</strong> 54.99€</p>
+    <p class="genre">
+      Žáner:
+      <a href="https://en.wikipedia.org/wiki/Fighting_game" target="_blank">Fighting</a>
+    </p>
+    <a href="kupit.html"><button class="buy-button">Kúpiť</button></a>
+
+    <!-- Galéria -->
+    <div class="gallery-wrapper">
+      <div class="gallery-container">
+        <div class="gallery-slide img1">
+          <video id="video1" autoplay controls muted>
+            <source src="yt1z.net - Street Fighter 6 - Announce Trailer (2160p60).mp4" type="video/mp4">
+            Váš prehliadač nepodporuje prehrávanie videí.
+          </video>
+        </div>
+        <div class="gallery-slide img2">
+          <img src="https://assetsio.reedpopcdn.com/street-fighter-6-cammy-2-(3).png?width=690&quality=70&format=jpg&auto=webp" alt="Screenshot 2">
+        </div>
+        <div class="gallery-slide img3">
+          <img src="https://attach.cgjoy.com/attachment/forum/202206/06/165556uriij1c0ijbpc0nj.jpg" alt="Screenshot 3">
+        </div>
+        <div class="gallery-slide img4">
+          <img src="https://criticalhits.com.br/wp-content/uploads/2022/06/street-fighter-6-shin-shoryuken.jpg" alt="Screenshot 4">
+        </div>
+        <div class="gallery-slide img5">
+           <img src="https://www.sidequesting.com/wp-content/uploads/SF6_-_Dee_Jay_Screenshot_1.jpg" alt="Screenshot 5">
+        </div>
+      </div>
+
+      <!-- Šípky -->
+      <label class="arrow left-arrow" onclick="changeSlide(-1)">&#10094;</label>
+      <label class="arrow right-arrow" onclick="changeSlide(1)">&#10095;</label>
+
+      <!-- Bodky -->
+      <div class="dots">
+        <div class="dot" onclick="goToSlide(1)"></div>
+        <div class="dot" onclick="goToSlide(2)"></div>
+        <div class="dot" onclick="goToSlide(3)"></div>
+        <div class="dot" onclick="goToSlide(4)"></div>
+        <div class="dot" onclick="goToSlide(5)"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  let currentSlide = 1;
+  const totalSlides = 5;
+
+  function changeSlide(direction) {
+    const currentVideo = document.querySelector(`#video${currentSlide}`);
+    if (currentVideo) {
+      currentVideo.pause();
+      currentVideo.currentTime = 0;
+    }
+
+    currentSlide += direction;
+    if (currentSlide > totalSlides) currentSlide = 1;
+    if (currentSlide < 1) currentSlide = totalSlides;
+    
+    showSlide(currentSlide);
+  }
+
+  function goToSlide(slideNumber) {
+    const currentVideo = document.querySelector(`#video${currentSlide}`);
+    if (currentVideo) {
+      currentVideo.pause();
+      currentVideo.currentTime = 0;
+    }
+
+    currentSlide = slideNumber;
+    showSlide(currentSlide);
+  }
+
+  function showSlide(slideNumber) {
+    const slides = document.querySelectorAll('.gallery-slide');
+    slides.forEach((slide, index) => {
+      slide.style.display = (index + 1 === slideNumber) ? 'block' : 'none';
+    });
+
+    const dots = document.querySelectorAll('.dot');
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index + 1 === slideNumber);
+    });
+
+    const nextVideo = document.querySelector(`#video${slideNumber}`);
+    if (nextVideo) {
+      nextVideo.play();
+    }
+  }
+
+  window.onload = function() {
+    showSlide(currentSlide);
+    const firstVideo = document.querySelector('#video1');
+    if (firstVideo) {
+      firstVideo.play();
+    }
+  };
+</script>
+
+</body>
+</html>
+
+
+

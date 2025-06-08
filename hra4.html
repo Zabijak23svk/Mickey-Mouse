@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <title>Minecraft</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #000;
+      color: #0ff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #111;
+      color: #0ff;
+      text-shadow: 0 0 10px #0ff;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .header-title {
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .header-categories {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      font-size: 18px;
+    }
+
+    .header-categories a {
+      color: #0ff;
+      text-decoration: none;
+      border-bottom: 1px dotted #0ff;
+    }
+
+    .header-categories a:hover {
+      text-shadow: 0 0 5px #0ff;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      padding: 40px;
+      align-items: stretch;
+    }
+
+    .left {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .left img {
+      width: 80%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 16px;
+      background-color: transparent;
+      box-shadow: 0 0 20px 5px rgba(0, 255, 255, 0.7);
+    }
+
+    .right {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .right h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .right p {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+
+    .right .genre a {
+      color: #0ff;
+      text-decoration: none;
+      border-bottom: 1px dotted #0ff;
+    }
+
+    .right .genre a:hover {
+      text-shadow: 0 0 5px #0ff;
+    }
+
+    .buy-button {
+      background-color: #0ff;
+      color: #000;
+      padding: 12px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+      box-shadow: 0 0 10px #0ff;
+    }
+
+    .gallery-wrapper {
+      width: 100%;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      position: relative;
+    }
+
+    .gallery-container {
+      width: 100%;
+      max-width: 800px;
+      height: 400px;
+      overflow: hidden;
+      border-radius: 16px;
+      background-color: #111;
+      position: relative;
+    }
+
+    .gallery-slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .gallery-slide img, .gallery-slide video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+
+    .arrow {
+      font-size: 40px;
+      cursor: pointer;
+      color: #0ff;
+      padding: 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+      box-shadow: 0 0 10px #0ff;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      display: inline-block;
+    }
+
+    .arrow:hover {
+      background-color: rgba(0, 255, 255, 0.2);
+    }
+
+    .left-arrow {
+      left: -20px;
+    }
+
+    .right-arrow {
+      right: -20px;
+    }
+
+    .dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      gap: 10px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      background-color: #0ff;
+      border-radius: 50%;
+      opacity: 0.5;
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+
+    .dot.active {
+      opacity: 1;
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-title">Minecraft</div>
+  <div class="header-categories">
+    <a href="domov.html">Domov</a>
+    <a href="kat1.html">Videohry</a>
+   
+  </div>
+</header>
+
+<div class="container">
+  <div class="left">
+    <img src="https://www.numerama.com/wp-content/uploads/2017/07/minecraft_horizontal-key-art.jpg" alt="Minecraft">
+  </div>
+  <div class="right">
+    <h1>Minecraft</h1>
+    <p>Sandboxová hra, ktorá umožňuje hráčom stavať, skúmať a prežívať v procedurálne generovanom svete.</p>
+    <p><strong>Cena:</strong> 23.99 €</p>
+    <p class="genre">
+      Genre: 
+      <a href="https://en.wikipedia.org/wiki/Sandbox_game" target="_blank">Sandbox</a>, 
+      <a href="https://en.wikipedia.org/wiki/Survival_game" target="_blank">Survival</a>, 
+      <a href="https://en.wikipedia.org/wiki/Multiplayer_video_game" target="_blank">Multiplayer</a>
+    </p>
+    <a href="kupit.html"><button class="buy-button">Kúpiť</button></a>
+
+    <!-- Galéria -->
+    <div class="gallery-wrapper">
+      <div class="gallery-container">
+        <div class="gallery-slide img1">
+          <video id="video1" autoplay controls muted>
+            <source src="yt1z.net - Official Minecraft Trailer (720p).mp4" type="video/mp4">
+            Váš prehliadač nepodporuje prehrávanie videí.
+          </video>
+        </div>
+        <div class="gallery-slide img2">
+          <img src="https://th.bing.com/th/id/R.87374886ead468089a04fb470fe3f81e?rik=aTs6%2bmDMFEVrMg&riu=http%3a%2f%2fimages.minecraft-book.ru%2fiblock%2fa3e%2fa3ef11bfc9bb7e0877ffddabc14a85f7%2fe7bdd1c9ec4f225c4ab28bb521d2147e.jpg&ehk=nwwdEH0KSAfAouubk7%2bR6vOAtjRC03yzHubpfrSsiT4%3d&risl=&pid=ImgRaw&r=0" alt="Screenshot 2">
+        </div>
+        <div class="gallery-slide img3">
+          <img src="https://i.redd.it/9vvvq2ukexo31.png" alt="Screenshot 3">
+        </div>
+        <div class="gallery-slide img4">
+          <img src="https://media.gamestop.com/i/gamestop/10168653_10168657_10168658_10169426_SCR10/Minecraft-Master-Collection?$screen$&bg=rgb(0,0,0)" alt="Screenshot 4">
+        </div>
+        <div class="gallery-slide img5">
+           <img src="https://static.planetminecraft.com/files/image/minecraft/texture-pack/2021/323/13937686_l.jpg" alt="Screenshot 1">
+        </div>
+      </div>
+
+      <!-- Šípky na prechod -->
+      <label class="arrow left-arrow" onclick="changeSlide(-1)">&#10094;</label>
+      <label class="arrow right-arrow" onclick="changeSlide(1)">&#10095;</label>
+
+      <!-- Bodky -->
+      <div class="dots">
+        <div class="dot" onclick="goToSlide(1)"></div>
+        <div class="dot" onclick="goToSlide(2)"></div>
+        <div class="dot" onclick="goToSlide(3)"></div>
+        <div class="dot" onclick="goToSlide(4)"></div>
+        <div class="dot" onclick="goToSlide(5)"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  let currentSlide = 1;
+  const totalSlides = 5;
+
+  function changeSlide(direction) {
+    const currentVideo = document.querySelector(`#video${currentSlide}`);
+    if (currentVideo) {
+      currentVideo.pause();
+      currentVideo.currentTime = 0;
+    }
+
+    currentSlide += direction;
+    if (currentSlide > totalSlides) currentSlide = 1;
+    if (currentSlide < 1) currentSlide = totalSlides;
+    
+    showSlide(currentSlide);
+  }
+
+  function goToSlide(slideNumber) {
+    const currentVideo = document.querySelector(`#video${currentSlide}`);
+    if (currentVideo) {
+      currentVideo.pause();
+      currentVideo.currentTime = 0;
+    }
+
+    currentSlide = slideNumber;
+    showSlide(currentSlide);
+  }
+
+  function showSlide(slideNumber) {
+    const slides = document.querySelectorAll('.gallery-slide');
+    slides.forEach((slide, index) => {
+      slide.style.display = (index + 1 === slideNumber) ? 'block' : 'none';
+    });
+
+    const dots = document.querySelectorAll('.dot');
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index + 1 === slideNumber);
+    });
+
+    const nextVideo = document.querySelector(`#video${slideNumber}`);
+    if (nextVideo) {
+      nextVideo.play();
+    }
+  }
+
+  window.onload = function() {
+    showSlide(currentSlide);
+    const firstVideo = document.querySelector('#video1');
+    if (firstVideo) {
+      firstVideo.play();
+    }
+  };
+</script>
+
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <title>Sekiro: Shadows Die Twice</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* (Štýly sú rovnaké ako predtým – nezmenené) */
+    body {
+      background-color: #0b0b0b;
+      color: #ff66cc; /* Zmena na ružovú */
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #111;
+      color: #ff66cc; /* Zmena na ružovú */
+      text-shadow: 0 0 10px #ff66cc; /* Zmena na ružovú */
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .header-title {
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .header-categories {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      font-size: 18px;
+    }
+
+    .header-categories a {
+      color: #ff66cc; /* Zmena na ružovú */
+      text-decoration: none;
+      border-bottom: 1px dotted #ff66cc; /* Zmena na ružovú */
+    }
+
+    .header-categories a:hover {
+      text-shadow: 0 0 5px #ff66cc; /* Zmena na ružovú */
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      padding: 40px;
+      align-items: stretch;
+    }
+
+    .left {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .left img {
+      width: 80%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 16px;
+      background-color: transparent;
+      box-shadow: 0 0 20px 5px rgba(255, 102, 204, 0.7); /* Zmena na ružovú */
+    }
+
+    .right {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .right h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .right p {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+
+    .right .genre a {
+      color: #ff66cc; /* Zmena na ružovú */
+      text-decoration: none;
+      border-bottom: 1px dotted #ff66cc; /* Zmena na ružovú */
+    }
+
+    .right .genre a:hover {
+      text-shadow: 0 0 5px #ff66cc; /* Zmena na ružovú */
+    }
+
+    .buy-button {
+      background-color: #ff66cc; /* Zmena na ružovú */
+      color: #000;
+      padding: 12px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+      box-shadow: 0 0 10px #ff66cc; /* Zmena na ružovú */
+    }
+
+    .gallery-wrapper {
+      width: 100%;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      position: relative;
+    }
+
+    .gallery-container {
+      width: 100%;
+      max-width: 800px;
+      height: 400px;
+      overflow: hidden;
+      border-radius: 16px;
+      background-color: #111;
+      position: relative;
+    }
+
+    .gallery-slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .gallery-slide img, .gallery-slide video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+
+    .arrow {
+      font-size: 40px;
+      cursor: pointer;
+      color: #ff66cc; /* Zmena na ružovú */
+      padding: 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+      box-shadow: 0 0 10px #ff66cc; /* Zmena na ružovú */
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      display: inline-block;
+    }
+
+    .arrow:hover {
+      background-color: rgba(255, 102, 204, 0.2); /* Zmena na ružovú */
+    }
+
+    .left-arrow {
+      left: -20px;
+    }
+
+    .right-arrow {
+      right: -20px;
+    }
+
+    .dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      gap: 10px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      background-color: #ff66cc; /* Zmena na ružovú */
+      border-radius: 50%;
+      opacity: 0.5;
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+
+    .dot.active {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-title">Sekiro: Shadows Die Twice</div>
+  <div class="header-categories">
+    <a href="domov.html">Domov</a>
+    <a href="kat1.html">Videohry</a>
+    
+  </div>
+</header>
+
+<div class="container">
+  <div class="left">
+    <img src="https://cs10.pikabu.ru/post_img/big/2019/03/22/11/155327891619188128.jpg" alt="Sekiro: Shadows Die Twice">
+  </div>
+  <div class="right">
+    <h1>Sekiro: Shadows Die Twice</h1>
+    <p>Preberte úlohu „jednorukého vlka“ v brutálnom svete feudálneho Japonska. Sekiro ponúka náročné súboje, intenzívne stealth prvky a nezabudnuteľný príbeh pomsty.</p>
+    <p><strong>Cena:</strong> 59.99€</p>
+    <p class="genre">
+      Genre:
+      <a href="https://en.wikipedia.org/wiki/Action-adventure_game" target="_blank">Action-Adventure</a>,
+      <a href="https://en.wikipedia.org/wiki/Stealth_game" target="_blank">Stealth</a>,
+      <a href="https://en.wikipedia.org/wiki/Soulslike" target="_blank">Soulslike</a>
+    </p>
+    <a href="kupit.html"><button class="buy-button">Kúpiť</button></a>
+
+    <!-- Galéria -->
+    <div class="gallery-wrapper">
+      <div class="gallery-container">
+        <div class="gallery-slide img1">
+          <video id="video1" autoplay controls muted>
+            <source src="yt1z.net - Sekiro Shadows Die Twice - Official Trailer E3 2018 (1080p).mp4" type="video/mp4">
+            Váš prehliadač nepodporuje prehrávanie videí.
+          </video>
+        </div>
+        <div class="gallery-slide img2">
+          <img src="https://i.redd.it/z7t86orgmxk61.jpg" alt="Screenshot 2">
+        </div>
+        <div class="gallery-slide img3">
+          <img src="https://ostatniatawerna.pl/wp-content/uploads/2022/02/Sekiro3.jpg" alt="Screenshot 3">
+        </div>
+        <div class="gallery-slide img4">
+          <img src="https://i.ytimg.com/vi/_jaR1ZyYOdU/maxresdefault.jpg" alt="Screenshot 4">
+        </div>
+        <div class="gallery-slide img5">
+          <img src="https://culturedvultures.com/wp-content/uploads/2019/03/Sekiro-Shadows-die-Twice.jpg" alt="Screenshot 5">
+        </div>
+      </div>
+
+      <label class="arrow left-arrow" onclick="changeSlide(-1)">&#10094;</label>
+      <label class="arrow right-arrow" onclick="changeSlide(1)">&#10095;</label>
+
+      <div class="dots">
+        <div class="dot" onclick="goToSlide(1)"></div>
+        <div class="dot" onclick="goToSlide(2)"></div>
+        <div class="dot" onclick="goToSlide(3)"></div>
+        <div class="dot" onclick="goToSlide(4)"></div>
+        <div class="dot" onclick="goToSlide(5)"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  let currentSlide = 1;
+  const totalSlides = 5;
+
+  function changeSlide(direction) {
+    const currentVideo = document.querySelector(`#video${currentSlide}`);
+    if (currentVideo) {
+      currentVideo.pause();
+      currentVideo.currentTime = 0;
+    }
+
+    currentSlide += direction;
+    if (currentSlide > totalSlides) currentSlide = 1;
+    if (currentSlide < 1) currentSlide = totalSlides;
+    
+    showSlide(currentSlide);
+  }
+
+  function goToSlide(slideNumber) {
+    const currentVideo = document.querySelector(`#video${currentSlide}`);
+    if (currentVideo) {
+      currentVideo.pause();
+      currentVideo.currentTime = 0;
+    }
+
+    currentSlide = slideNumber;
+    showSlide(currentSlide);
+  }
+
+  function showSlide(slideNumber) {
+    const slides = document.querySelectorAll('.gallery-slide');
+    slides.forEach((slide, index) => {
+      slide.style.display = (index + 1 === slideNumber) ? 'block' : 'none';
+    });
+
+    const dots = document.querySelectorAll('.dot');
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index + 1 === slideNumber);
+    });
+
+    const nextVideo = document.querySelector(`#video${slideNumber}`);
+    if (nextVideo) {
+      nextVideo.play();
+    }
+  }
+
+  window.onload = function() {
+    showSlide(currentSlide);
+    const firstVideo = document.querySelector('#video1');
+    if (firstVideo) {
+      firstVideo.play();
+    }
+  };
+</script>
+
+</body>
+</html>
+

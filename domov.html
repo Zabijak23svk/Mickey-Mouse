@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <title>Domov – E-shop</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background: transparent;
+      overflow-x: hidden;
+    }
+
+    video.video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    header,
+    nav {
+      border: none !important;
+      outline: none !important;
+      box-shadow: none !important;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.85;
+    }
+
+    nav {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 0.5rem;
+      text-align: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .welcome {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: calc(100vh - 140px);
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .welcome-box {
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      padding: 2rem 3rem;
+      border-radius: 15px;
+      max-width: 600px;
+      border: none;
+      box-shadow: none;
+    }
+
+    .welcome-box h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .welcome-box p {
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <video autoplay muted loop playsinline class="video-bg">
+    <source src="100904-video-2160.mp4" type="video/mp4">
+    Tvoj prehliadač nepodporuje video tag.
+  </video>
+
+  <header>
+    <h1 class="neon-text">Vitajte v najlepšom e-shope</h1>
+  </header>
+
+  <nav>
+    <a href="domov.html" class="neon-text">Domov</a>
+    <a href="kat1.html" class="neon-text">Videohry</a>
+    
+  </nav>
+
+  <div class="welcome">
+    <div class="welcome-box neon-text">
+      <h1>Vitaj!</h1>
+      <p>Objav svet štýlových produktov a moderných technológií.  
+      Nakupovanie ešte nikdy nebolo také príjemné!</p>
+    </div>
+  </div>
+
+</body>
+</html>
